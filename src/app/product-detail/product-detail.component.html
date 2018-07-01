@@ -1,0 +1,28 @@
+<div class="thumbnail">
+  <img src="https://cloud-minapp-15787.cloud.ifanrusercontent.com/1fPkbbvdWHCKDppO.jpeg">
+  <div>
+    <h4 class="pull-right">{{product.price}}元</h4>
+    <h4>{{product.title}}</h4>
+    <p>{{product.desc}}</p>
+  </div>
+  <div>
+    <p class="pull-right">{{comments.length}}</p>
+    <p>
+      <app-start [rating]="product.rating"></app-start>
+    </p>
+  </div>
+</div>
+
+<div class="well">
+  <p>评论</p>
+  <div class="row" *ngFor="let comment of comments" >
+    <hr>
+    <div class="col-md-12">
+      <app-start [rating]="comment.rating"></app-start>
+      <span>{{comment.user}}</span>
+      <span class="pull-right">{{comment.timestamp}}</span>
+      <p></p>
+      <p>{{comment.content}}</p>
+    </div>
+  </div>
+</div>

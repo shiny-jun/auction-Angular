@@ -1,0 +1,17 @@
+<div *ngFor="let product of products" class="col-md-4 col-sm-4 col-lg-4">
+  <a [routerLink]="['/product',product.id]">
+    <div class="thumbnail">
+      <img [src]="imgurl">
+      <div class="caption">
+        <h4 class="pull-right">{{product.price}}元</h4>
+        <h4>
+          <a>{{product.title}}</a>
+        </h4>
+        <p>{{product.desc}}</p>
+      </div>
+      <div>
+        <app-start [rating]="product.rating"></app-start>
+      </div>
+    </div>
+  </a>
+</div>
